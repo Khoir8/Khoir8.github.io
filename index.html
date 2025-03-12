@@ -10,6 +10,10 @@
 
     <!-- BootStrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+
+    <!-- AOS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />  
+
     <!-- my CSS -->
     <link rel="stylesheet" href="style.css" />
     <title>MY Portfolio | Miftahul Khoiriah</title>
@@ -44,9 +48,9 @@
 
     <!-- Jumbotron -->
     <section class="jumbotron text-center">
-      <img src="img/Cool.jpg" alt="Miftahul Khoiriah" width="200" class="img-thumbnail" />
+      <img src="img/Cool.jpg" alt="Miftahul Khoiriah" width="200" class="img-thumbnail"/>
       <h1 class="display-4">Miftahul Khoiriah</h1>
-      <p class="lead">Saya Seorang Analis Data.</p>
+      <p class="lead"></p>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
         <path
           fill="#ffffff"
@@ -66,16 +70,16 @@
           </div>
         </div>
         <div class="row justify-content-center fs-5 text-center">
-          <div class="col-md-4">
+          <div class="col-md-4" data-aos="fade-right">
             <p>Hai! Nama saya Miftahul Khoiriah. saya adalah seorang mahasiswa dari Universitas Islam Negeri Sumatera Utara..</p>
           </div>
-          <div class="col-md-4">
+          <div class="col-md-4" data-aos="fade-left" data-aos-delay="200">
             <p>
               Saya antusias dalam bidang pengembangan web dan analisis data, dengan fokus pada penciptaan solusi yang efisien dan inovatif. Berbekal pengalaman yang saya miliki, saya selalu mencari cara untuk menyelesaikan tantangan
               teknologi serta berkomitmen untuk terus belajar dan berkembang di industri ini.
             </p>
           </div>
-          <div class="col-md-4 text-start">
+          <div class="col-md-4 fs-6 text-start" data-aos="fade-left" data-aos-delay="50">
             <p><i class="fw-bold">Nama</i> : Miftahul Khoiriah</p>
             <p><i class="fw-bold">Email</i> : khoiriahmiftahul08@gmail.com</p>
             <p><i class="fw-bold">Lokasi</i> : Sumatera Utara, Indonesia</p>
@@ -106,7 +110,7 @@
         </div>
         <div class="row justify-content-center">
           <div class="col-md-4 mb-3">
-            <div class="card">
+            <div class="card" data-aos="flip-right" data-aos-duration="500">
               <img src="img/Projects/Project 1.png" class="card-img-top" alt="Project 1" />
               <div class="card-body">
                 <h5 class="card-title">Data Analyst Using Machine Learning</h5>
@@ -116,12 +120,12 @@
             </div>
           </div>
           <div class="col-md-4 mb-3">
-            <div class="card">
-              <img src="img/Projects/Project 2.png" class="card-img-top" alt="Project 2" />
+            <div class="card" data-aos="flip-left" data-aos-duration="500" data-aos-delay="50">
+              <img src="img/Projects/Project 3.jpeg" class="card-img-top" alt="Project 2" />
               <div class="card-body">
                 <h5 class="card-title">Website Pengarsipan</h5>
                 <p class="card-text">Website untuk pengarsipan dan pengolahan surat masuk dan surat keluar.</p>
-                <a href="#" class="btn btn-primary">Lihat di Github</a>
+                <a href="https://github.com/Khoir8/Khoir8-Autism.github.io" class="btn btn-primary">Lihat di Github</a>
               </div>
             </div>
           </div>
@@ -137,6 +141,18 @@
     </section>
     <!-- Akhir Projects -->
 
+    <!-- Gallery -->
+     <section id="gallery">
+      <div class="container">
+        <div class="row text-center mb-3">
+          <div class="col">
+            <h2>Gallery</h2>
+          </div>
+        </div>
+      </div>
+     </section>
+     <!-- Akhir Gallery -->
+
     <!-- Contact -->
     <section id="contact">
       <div class="container">
@@ -147,20 +163,28 @@
         </div>
         <div class="row justify-content-center">
           <div class="col-md-6">
-            <form>
+            <div class="alert alert-success alert-dismissible fade show d-none my-alert" role="alert">
+              <strong>Terima Kasih!</strong> Pesan anda sudah kami terima.
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            <form name="wpu-contact-form">
               <div class="mb-3">
                 <label for="name" class="form-label">Nama Lengkap</label>
-                <input type="text" class="form-control" id="name" aria-describedby="name" />
+                <input type="text" class="form-control" id="name" aria-describedby="name" name="nama" />
               </div>
               <div class="mb-3">
                 <label for="email" class="form-label">Email</label>
-                <input type="email" class="form-control" id="email" aria-describedby="email" />
+                <input type="email" class="form-control" id="email" aria-describedby="email" name="email" />
               </div>
               <div class="mb-3">
                 <label for="pesan" class="form-label">Pesan</label>
-                <textarea class="form-control" id="pesan" rows="3"></textarea>
+                <textarea class="form-control" id="pesan" rows="3" name="pesan"></textarea>
               </div>
-              <button type="submit" class="btn btn-success">Kirim</button>
+              <button type="submit" class="btn btn-success btn-kirim">Kirim</button>
+              <button class="btn btn-success btn-loading d-none" type="button" disabled>
+                <span class="spinner-border spinner-border-sm" aria-hidden="true"></span>
+                <span role="status">Loading...</span>
+              </button>
             </form>
           </div>
         </div>
@@ -182,5 +206,52 @@
     <!-- Akhir Footer -->
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        once: true,
+        duration: 2000,
+      });
+    </script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/TextPlugin.min.js"></script>
+    <script>
+      gsap.registerPlugin(TextPlugin);
+      gsap.to('.lead', { duration: 1, delay: 1.5, text: 'Fresh Graduate | Analyst Data'})
+      gsap.to('.lead', { duration: 3, delay: 3, text: 'Fresh Graduate | Web Development'})
+      gsap.from('.jumbotron img', {duration: 1, rotateY: -100, opacity: 0 });
+      gsap.from('.navbar', { duration: 1.5, y: '100%', opacity: 0, ease: 'bounce' });
+      gsap.from('.display-4', { duration: 1, x: -50, opacity: 0, delay: 0.5, ease: 'back' });
+    </script>
+
+<script>
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbzbyG5n27BgOa0PwG6Bu0FdxP2QtDnq-XMEYFwA5Oqif8n9wopWAIQCPWVcyoM1z-PBwQ/exec';
+  const form = document.forms['wpu-contact-form'];
+  const btnKirim = document.querySelector('.btn-kirim');
+  const btnLoading = document.querySelector('.btn-loading');
+  const myAlert = document.querySelector('.my-alert');
+
+  form.addEventListener('submit', e => {
+    e.preventDefault()
+    //ketika tombol submit di klik
+    //tampilkan tombol loading, hilangkan tombol kirim
+    btnLoading.classList.toggle('d-none');
+    btnKirim.classList.toggle('d-none');
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(response => {
+        //tampilkan tombol kirim, hilangkan tombol loading
+        btnLoading.classList.toggle('d-none');
+        btnKirim.classList.toggle('d-none');
+        //tampilkan alert
+        myAlert.classList.toggle('d-none');
+        //reset formnya
+        form.reset();
+        console.log('Success!', response)
+      })
+      .catch(error => console.error('Error!', error.message))
+  })
+</script>
   </body>
 </html>
